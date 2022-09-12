@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { stat } from 'fs';
 import {
   PLAYER_SKILL_PROFICIENCY,
   PLAYER_SKILL_PROFICIENCY_VALUE,
@@ -14,6 +15,9 @@ export class statBlockServices {
   setStatProficiencies: PLAYER_SKILL_PROFICIENCY_VALUE;
   level: number;
   pBonus: number = this.proficiencyBonus(this.level);
+  class: string;
+  armorEquipped: string[];
+  armorClass: number = this.setArmorClass(this.statModifier, armorEquipped);
 
   constructor() {}
 
@@ -32,74 +36,39 @@ export class statBlockServices {
     return this.statModifier;
   }
 
-  setStatProficiencyModifier(
-    skillProficiencies: PLAYER_SKILL_PROFICIENCY,
-    level: number
-  ): PLAYER_SKILL_PROFICIENCY_VALUE {
-
-    this.setStatProficiencies = Object.values(skillProficiencies).forEach(
-      (element) => {
-        element.value = this.returnValueOfStat(element[0], element[1], this.pBonus);
-      }
-    );
-
-    return this.setStatProficiencies;
-  }
-
-  returnValueOfStat(
-    skillProficiency: boolean,
-    baseStat: string,
-    pBonus: number
-  ): number {
-    let result: number = 0;
-
-    switch (baseStat) {
-      case 'strength':
-        result = skillProficiency
-          ? this.statModifier.strength + pBonus
-          : this.statModifier.strength;
-        break;
-
-      case 'dexterity':
-        result = skillProficiency
-          ? this.statModifier.dexterity + pBonus
-          : this.statModifier.dexterity;
-        break;
-
-      case 'constitution':
-        result = skillProficiency
-          ? this.statModifier.constitution + pBonus
-          : this.statModifier.constitution;
-        break;
-
-      case 'intelligence':
-        result = skillProficiency
-          ? this.statModifier.intelligence + pBonus
-          : this.statModifier.intelligence;
-        break;
-
-      case 'wisdom':
-        result = skillProficiency
-          ? this.statModifier.wisdom + pBonus
-          : this.statModifier.wisdom;
-        break;
-
-      case 'charisma':
-        result = skillProficiency
-          ? this.statModifier.charisma + pBonus
-          : this.statModifier.charisma;
-        break;
-    }
-
-    return result;
-  }
-
   proficiencyBonus(level: number) {
     return 1 + Math.ceil(level / 4);
   }
 
-  setIniative(statModifier:RAW_STAT_BLOCK): number{
-    let iniative = statModifier.dexterity  + this.pBonus;
+  setIniative(statModifier: RAW_STAT_BLOCK): number {
+    let iniative = statModifier.dexterity + this.pBonus;
     return iniative;
+  }
+
+  setArmorClass(statModifier: RAW_STAT_BLOCK, armorEquipped: string[]): number {
+    let armor = this.getEquipment(armorEquipped);
+    let acValue: number;
+
+    switch (this.class) {
+      case 'barbarian':
+        acValue = statModifier.dexterity + statModifier.constitution + 10;
+        return acValue;
+        break;
+
+      case 'monk':
+        acValue = statModifier.constitution + statModifier.wisdom + 10;
+        return acValue;
+        break;
+
+      default:
+        acValue = statModifier.dexterity + armor;
+        return acValue;
+        break;
+    }
+  }
+
+  getEquipment(armorEquipped:string[]): number{
+    
+    return results;
   }
 }

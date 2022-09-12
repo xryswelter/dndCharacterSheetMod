@@ -1,7 +1,7 @@
 import {
   CASTER_INTERFACE,
   WARLOCK_INTERFACE,
-} from '../interfaces/caster.interface';
+} from '../interfaces/level.interface';
 
 const FULL_CASTER_SPELL_SLOTS: CASTER_INTERFACE = {
   level_1: [2, 0, 0, 0, 0, 0, 0, 0, 0, 0],

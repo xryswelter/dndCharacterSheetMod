@@ -1,4 +1,4 @@
-import { CASTER_INTERFACE} from "./caster.interface";
+import { CASTER_INTERFACE} from "./level.interface";
 
 interface MARTIAL_BONUS_CLASS_FEATURES {
   rage?: number;
