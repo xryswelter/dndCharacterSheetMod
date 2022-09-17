@@ -4,8 +4,10 @@ import {
   HALF_CASTER_SPELL_SLOTS,
   WARLOCK_SPELL_SLOTS,
 } from './caster-spell-slots.constants';
+const characterClasses ={
 
-const artificer: CLASS_BASICS = {
+
+artificer: {
   hitDice: 8,
   savingThrows: ['Constitution', 'Intelligence'],
   armorProficiency: {
@@ -21,9 +23,9 @@ const artificer: CLASS_BASICS = {
   bonusFeatures: {
     spellCaster: HALF_CASTER_SPELL_SLOTS,
   },
-};
+},
 
-const barbarian: CLASS_BASICS = {
+barbarian:{
   hitDice: 12,
   savingThrows: ['Strength', 'Constitution'],
   armorProficiency: {
@@ -39,9 +41,9 @@ const barbarian: CLASS_BASICS = {
   bonusFeatures: {
     martialClass: { rage: 2 },
   },
-};
+},
 
-const bard: CLASS_BASICS = {
+bard:{
   hitDice: 8,
   savingThrows: ['Dexterity', 'Charisma'],
   armorProficiency: {
@@ -64,9 +66,9 @@ const bard: CLASS_BASICS = {
     spellCaster: FULL_CASTER_SPELL_SLOTS,
     casterClass: { bardicInspiration: 2 },
   },
-};
+},
 
-const cleric: CLASS_BASICS = {
+cleric:{
   hitDice: 8,
   savingThrows: ['Wisdom', 'Charisma'],
   armorProficiency: {
@@ -83,9 +85,9 @@ const cleric: CLASS_BASICS = {
     spellCaster: FULL_CASTER_SPELL_SLOTS,
     casterClass: { divineIntervention: 2, channelDivinity: 0 },
   },
-};
+},
 
-const druid: CLASS_BASICS = {
+druid:{
   hitDice: 8,
   savingThrows: ['Intelligence', 'Wisdom'],
   armorProficiency: {
@@ -114,9 +116,9 @@ const druid: CLASS_BASICS = {
     spellCaster: FULL_CASTER_SPELL_SLOTS,
     casterClass: { wildShape: 0 },
   },
-};
+},
 
-const fighter: CLASS_BASICS = {
+fighter:{
   hitDice: 10,
   savingThrows: ['Strength', 'Constitution'],
   armorProficiency: {
@@ -134,8 +136,8 @@ const fighter: CLASS_BASICS = {
       actionSurge: 2,
     },
   },
-};
-const monk: CLASS_BASICS = {
+},
+monk:{
   hitDice: 8,
   savingThrows: ['Dexterity', 'Wisdom'],
   armorProficiency: {
@@ -156,9 +158,9 @@ const monk: CLASS_BASICS = {
       kiPoints: 2,
     },
   },
-};
+},
 
-const paladin: CLASS_BASICS = {
+paladin:{
   hitDice: 10,
   savingThrows: ['Strength', 'Charisma'],
   armorProficiency: {
@@ -174,9 +176,9 @@ const paladin: CLASS_BASICS = {
   bonusFeatures: {
     spellCaster: HALF_CASTER_SPELL_SLOTS,
   },
-};
+},
 
-const ranger: CLASS_BASICS = {
+ranger:{
   hitDice: 10,
   savingThrows: ['Dexterity', 'Wisdom'],
   armorProficiency: {
@@ -197,8 +199,8 @@ const ranger: CLASS_BASICS = {
       favoriteTerrain: {},
     },
   },
-};
-const rogue: CLASS_BASICS = {
+},
+rogue:{
   hitDice: 8,
   savingThrows: ['Deterity', 'Intelligence'],
   armorProficiency: {
@@ -217,9 +219,9 @@ const rogue: CLASS_BASICS = {
       shortswords: true,
     },
   },
-};
+},
 
-const sorcerer: CLASS_BASICS = {
+sorcerer:{
   hitDice: 6,
   savingThrows: ['Constitution', 'Charisma'],
   armorProficiency: {
@@ -243,9 +245,9 @@ const sorcerer: CLASS_BASICS = {
     casterClass: { sorceryPoints: 0 },
     spellCaster: FULL_CASTER_SPELL_SLOTS,
   },
-};
+},
 
-const warlock: CLASS_BASICS = {
+warlock:{
   hitDice: 8,
   savingThrows: ['Wisdom', 'Charisma'],
   armorProficiency: {
@@ -264,9 +266,9 @@ const warlock: CLASS_BASICS = {
       warlockSlots: WARLOCK_SPELL_SLOTS,
     },
   },
-};
+},
 
-const wizard: CLASS_BASICS = {
+wizard:{
   hitDice: 6,
   savingThrows: ['Intelligence', 'Wisdom'],
   armorProficiency: {
@@ -290,20 +292,8 @@ const wizard: CLASS_BASICS = {
     casterClass: { arcaneRecovery: 2 },
     spellCaster: FULL_CASTER_SPELL_SLOTS,
   },
-};
-
+}
+}
 export {
-  artificer,
-  barbarian,
-  bard,
-  cleric,
-  druid,
-  fighter,
-  monk,
-  paladin,
-  ranger,
-  rogue,
-  sorcerer,
-  warlock,
-  wizard,
-};
+  characterClasses
+},

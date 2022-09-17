@@ -18,31 +18,32 @@ interface characterStats {
       proficient?: boolean;
       savingValue?: number;
     };
-    dexerity?: { 
-      proficient?: boolean; 
-      savingValue?: number 
+    dexerity?: {
+      proficient?: boolean;
+      savingValue?: number;
     };
-    constitution?: { 
-      proficient?: boolean; 
-      savingValue?: number 
+    constitution?: {
+      proficient?: boolean;
+      savingValue?: number;
     };
-    intelligence?: { 
-      proficient?: boolean; 
-      savingValue?: number 
+    intelligence?: {
+      proficient?: boolean;
+      savingValue?: number;
     };
-    wisdom?: { 
-      proficient?: boolean; 
-      savingValue?: number 
+    wisdom?: {
+      proficient?: boolean;
+      savingValue?: number;
     };
-    charisma?: { 
-      proficient?: boolean; 
-      savingValue?: number 
+    charisma?: {
+      proficient?: boolean;
+      savingValue?: number;
     };
   };
   battleStats?: {
     currentHP?: number;
     maxHP?: number;
     temporaryHP?: number;
+    hitDice?: number;
     armorClass?: number;
     generalDifficultClass?: number;
     abnormalStatus?: {
